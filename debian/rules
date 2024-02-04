@@ -1,4 +1,22 @@
 #!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+include /usr/share/dpkg/pkg-info.mk
+SAFESTABLESTRINGIFY_DOCDIR=debian/$(DEB_SOURCE)/usr/share/doc/node-safe-stable-stringify
 
 %:
 	dh $@
+
+override_dh_installdocs:
+	dh_installdocs
+	mkdir -p $(SAFESTABLESTRINGIFY_DOCDIR)
+	ln -s "../$(DEB_SOURCE)/copyright" $(SAFESTABLESTRINGIFY_DOCDIR)/
+	install -m 644 safe-stable-stringify/readme.md $(SAFESTABLESTRINGIFY_DOCDIR)/
+
+override_dh_installchangelogs:
+	dh_installchangelogs
+	mkdir -p $(SAFESTABLESTRINGIFY_DOCDIR)
+	install -m 644 safe-stable-stringify/CHANGELOG.md $(SAFESTABLESTRINGIFY_DOCDIR)/changelog
