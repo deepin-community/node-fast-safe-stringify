@@ -1,5 +1,49 @@
-template-repository (1.0-1) unstable; urgency=medium
+node-fast-safe-stringify (2.1.1+~2.3.1-2) unstable; urgency=medium
 
-  * Initial release
+  * Team upload
+  * Drop one test based on a short timeout
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Yadd <yadd@debian.org>  Sun, 13 Mar 2022 14:47:45 +0100
+
+node-fast-safe-stringify (2.1.1+~2.3.1-1) unstable; urgency=medium
+
+  * Team upload
+  * Embed safe-stable-stringify (fork with some default behavior changes)
+    * Add related test
+    * Update copyright
+
+ -- Yadd <yadd@debian.org>  Sun, 13 Mar 2022 09:11:42 +0100
+
+node-fast-safe-stringify (2.1.1-1) unstable; urgency=medium
+
+  * Team upload
+
+  [ lintian-brush ]
+  * Trim trailing whitespace.
+  * Bump debhelper from old 11 to 13
+  * Set upstream metadata fields: Bug-Submit
+  * Remove obsolete fields Contact, Name from debian/upstream/metadata
+    (already present in machine-readable debian/copyright)
+  * Update standards version to 4.6.0, no changes needed
+
+  [ Yadd ]
+  * Add "Rules-Requires-Root: no"
+  * Use dh-sequence-nodejs instead of pkg-js-tools
+  * Drop dependency to nodejs
+  * Mark test dependencies with <!nocheck>
+  * Break+Replace node-superagent < 6.1.0+repack~ (Closes: #1000380)
+  * New upstream version 2.1.1
+
+ -- Yadd <yadd@debian.org>  Mon, 22 Nov 2021 14:19:33 +0100
+
+node-fast-safe-stringify (2.0.7-2) unstable; urgency=medium
+
+  * Update debian/copyright to include all copyright holders.
+
+ -- Roland Mas <lolando@debian.org>  Wed, 10 Nov 2021 21:09:47 +0100
+
+node-fast-safe-stringify (2.0.7-1) unstable; urgency=medium
+
+  * Initial release based on npm2deb template.
+
+ -- Roland Mas <lolando@debian.org>  Wed, 15 Sep 2021 15:00:25 +0200

@@ -1,0 +1,2 @@
+Tests: safe-stable-stringify
+Depends: @, @builddeps@

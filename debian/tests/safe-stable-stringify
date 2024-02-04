@@ -1,0 +1,2 @@
+cd safe-stable-stringify
+sh -e ../debian/nodejs/safe-stable-stringify/test

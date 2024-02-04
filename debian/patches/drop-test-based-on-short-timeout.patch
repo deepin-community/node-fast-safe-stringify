@@ -1,0 +1,23 @@
+Description: drop test based on a short timeout
+Author: Yadd <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2022-03-13
+
+--- a/safe-stable-stringify/test.js
++++ b/safe-stable-stringify/test.js
+@@ -672,6 +672,7 @@
+   assert.end()
+ })
+ 
++/*
+ test('trigger sorting fast path for objects with lots of properties', function (assert) {
+   const keys = []
+   const obj = {}
+@@ -691,6 +692,7 @@
+   assert.ok(Math.abs(actualTime - expectedTime) < 50)
+   assert.end()
+ })
++*/
+ 
+ test('maximum spacer length', function (assert) {
+   const input = { a: 0 }

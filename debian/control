@@ -1,15 +1,32 @@
-Source: template-repository
-Section: unknown
+Source: node-fast-safe-stringify
+Section: javascript
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Roland Mas <lolando@debian.org>
+Testsuite: autopkgtest-pkg-nodejs
+Build-Depends:
+ debhelper-compat (= 13)
+ , dh-sequence-nodejs
+ , node-tap <!nocheck>
+ , node-clone <!nocheck>
+Standards-Version: 4.6.0
+Homepage: https://github.com/davidmarkclements/fast-safe-stringify#readme
+Vcs-Git: https://salsa.debian.org/js-team/node-fast-safe-stringify.git
+Vcs-Browser: https://salsa.debian.org/js-team/node-fast-safe-stringify
+Rules-Requires-Root: no
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: node-fast-safe-stringify
+Architecture: all
+Depends: ${misc:Depends}
+Provides: ${nodejs:Provides}
+Breaks: node-superagent (<< 6.1.0+repack~)
+Replaces: node-superagent (<< 6.1.0+repack~)
+Description: Safely and quickly serialize JavaScript objects
+ Safe and fast serialization alternative to [JSON.stringify][].
+ .
+ Gracefully handles circular structures instead of throwing.
+ .
+ Provides a deterministic ("stable") version as well that will also
+ gracefully handle circular structures.
+ .
+ Node.js is an event-based server-side JavaScript engine.
